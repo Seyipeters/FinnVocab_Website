@@ -16,20 +16,21 @@ for ($i = 0; $i -lt $content.Length; $i++) {
 
 $newLines = @"
 
-  {fi:"Toimisto", en:"Office", ph:"toy-mis-toh", cat:"work", ex:"Toimisto on keskustassa. / The office is in the city center.", starter:true},
-  {fi:"Työntekijä", en:"Employee", ph:"tü-ön-tek-i-yä", cat:"work", ex:"Hän on hyvä työntekijä. / He/She is a good employee.", starter:true},
-  {fi:"Pomo", en:"Boss", ph:"poh-moh", cat:"work", ex:"Pomo on matkalla. / The boss is on a trip.", starter:true},
-  {fi:"Tehtävä", en:"Task", ph:"teh-tä-vä", cat:"work", ex:"Tämä on tärkeä tehtävä. / This is an important task.", starter:true},
-  {fi:"Raportti", en:"Report", ph:"rah-por-ti", cat:"work", ex:"Kirjoitan raportin. / I am writing the report.", starter:true},
-  {fi:"Sähköposti", en:"Email", ph:"säh-kö-pos-ti", cat:"work", ex:"Lähetän sähköpostin. / I am sending an email.", starter:true},
-  {fi:"Puhelin", en:"Phone", ph:"pu-he-lin", cat:"work", ex:"Puhelin soi. / The phone is ringing.", starter:true},
-  {fi:"Tietokone", en:"Computer", ph:"tie-toh-ko-neh", cat:"work", ex:"Käytän tietokonetta. / I use a computer.", starter:true},
-  {fi:"Kollega", en:"Colleague", ph:"kol-leh-gah", cat:"work", ex:"Kollega auttaa minua. / The colleague helps me.", starter:true},
-  {fi:"Palaveri", en:"Meeting (informal)", ph:"pah-lah-ve-ri", cat:"work", ex:"Meillä on palaveri. / We have a meeting.", starter:true},
-  {fi:"Aikataulu", en:"Schedule", ph:"ay-kah-tah-lu", cat:"work", ex:"Tarkista aikataulu. / Check the schedule.", starter:true},
-  {fi:"Projekt", en:"Project", ph:"pro-yek-ti", cat:"work", ex:"Projekti on valmis. / The project is ready.", starter:true},
-  {fi:"Budjetti", en:"Budget", ph:"bud-yet-ti", cat:"work", ex:"Budjetti on pieni. / The budget is small.", starter:true},
-  {fi:"Sopimus", en:"Contract", ph:"soh-pi-mus", cat:"work", ex:"Allekirjoitan sopimuksen. / I sign the contract.", starter:true},
+  {fi:"Ostos", en:"Purchase", ph:"os-tos", cat:"store", ex:"Teen ostoksia. / I am shopping.", starter:true},
+  {fi:"Hinta", en:"Price", ph:"hin-tah", cat:"store", ex:"Hinta on korkea. / The price is high.", starter:true},
+  {fi:"Alennus", en:"Discount", ph:"ah-len-nus", cat:"store", ex:"Saan alennuksen. / I get a discount.", starter:true},
+  {fi:"Kassa", en:"Cash register", ph:"kas-sah", cat:"store", ex:"Menen kassalle. / I go to the cash register.", starter:true},
+  {fi:"Ostoskärry", en:"Shopping cart", ph:"os-tos-kär-rü", cat:"store", ex:"Tarvitsen ostoskärryn. / I need a shopping cart.", starter:true},
+  {fi:"Ostoslista", en:"Shopping list", ph:"os-tos-lis-tah", cat:"store", ex:"Tarkistan ostoslistan. / I check the shopping list.", starter:true},
+  {fi:"Tuote", en:"Product", ph:"tuo-teh", cat:"store", ex:"Tämä tuote on hyvä. / This product is good.", starter:true},
+  {fi:"Myyjä", en:"Salesperson", ph:"müü-yä", cat:"store", ex:"Myyjä auttaa minua. / The salesperson helps me.", starter:true},
+  {fi:"Ostaja", en:"Buyer", ph:"os-tah-yah", cat:"store", ex:"Ostaja tulee. / The buyer is coming.", starter:true},
+  {fi:"Maksu", en:"Payment", ph:"mak-su", cat:"store", ex:"Teen maksun. / I make the payment.", starter:true},
+  {fi:"Kuitti", en:"Receipt", ph:"kuit-ti", cat:"store", ex:"Saan kuitin. / I get the receipt.", starter:true},
+  {fi:"Paketti", en:"Package", ph:"pah-ket-ti", cat:"store", ex:"Paketti on iso. / The package is big.", starter:true},
+  {fi:"Laatikko", en:"Box", ph:"lay-tik-koh", cat:"store", ex:"Avaa laatikko. / Open the box.", starter:true},
+  {fi:"Hylly", en:"Shelf", ph:"hül-lü", cat:"store", ex:"Kirja on hyllyssä. / The book is on the shelf.", starter:true},
+  {fi:"Varasto", en:"Warehouse", ph:"vah-ras-toh", cat:"store", ex:"Varasto on täynnä. / The warehouse is full.", starter:true},
 
 ];
 
