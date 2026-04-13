@@ -22,7 +22,28 @@ var STARTER = [
   {fi:"Sairaala",    en:"Hospital",                ph:"sai-raa-la",   cat:"emergency", ex:"Missä on lähin sairaala? / Where is the nearest hospital?", starter:true},
   {fi:"Kauppa",      en:"Shop / Store",            ph:"kaup-pa",      cat:"daily",    ex:"Menen kauppaan. / I am going to the shop.", starter:true},
   {fi:"Bussi",       en:"Bus",                     ph:"bus-si",       cat:"daily",    ex:"Milloin bussi tulee? / When does the bus come?", starter:true},
+
+  {fi:"Kokous", en:"Meeting", ph:"koh-kohs", cat:"work", ex:"Kokous alkaa kello kolme. / The meeting starts at three o'clock.", starter:true},
+
+
+  {fi:"Toimisto", en:"Office", ph:"toy-mis-toh", cat:"work", ex:"Toimisto on keskustassa. / The office is in the city center.", starter:true},
+  {fi:"Työntekijä", en:"Employee", ph:"tü-ön-tek-i-yä", cat:"work", ex:"Hän on hyvä työntekijä. / He/She is a good employee.", starter:true},
+  {fi:"Pomo", en:"Boss", ph:"poh-moh", cat:"work", ex:"Pomo on matkalla. / The boss is on a trip.", starter:true},
+  {fi:"Tehtävä", en:"Task", ph:"teh-tä-vä", cat:"work", ex:"Tämä on tärkeä tehtävä. / This is an important task.", starter:true},
+  {fi:"Raportti", en:"Report", ph:"rah-por-ti", cat:"work", ex:"Kirjoitan raportin. / I am writing the report.", starter:true},
+  {fi:"Sähköposti", en:"Email", ph:"säh-kö-pos-ti", cat:"work", ex:"Lähetän sähköpostin. / I am sending an email.", starter:true},
+  {fi:"Puhelin", en:"Phone", ph:"pu-he-lin", cat:"work", ex:"Puhelin soi. / The phone is ringing.", starter:true},
+  {fi:"Tietokone", en:"Computer", ph:"tie-toh-ko-neh", cat:"work", ex:"Käytän tietokonetta. / I use a computer.", starter:true},
+  {fi:"Kollega", en:"Colleague", ph:"kol-leh-gah", cat:"work", ex:"Kollega auttaa minua. / The colleague helps me.", starter:true},
+  {fi:"Palaveri", en:"Meeting (informal)", ph:"pah-lah-ve-ri", cat:"work", ex:"Meillä on palaveri. / We have a meeting.", starter:true},
+  {fi:"Aikataulu", en:"Schedule", ph:"ay-kah-tah-lu", cat:"work", ex:"Tarkista aikataulu. / Check the schedule.", starter:true},
+  {fi:"Projekt", en:"Project", ph:"pro-yek-ti", cat:"work", ex:"Projekti on valmis. / The project is ready.", starter:true},
+  {fi:"Budjetti", en:"Budget", ph:"bud-yet-ti", cat:"work", ex:"Budjetti on pieni. / The budget is small.", starter:true},
+  {fi:"Sopimus", en:"Contract", ph:"soh-pi-mus", cat:"work", ex:"Allekirjoitan sopimuksen. / I sign the contract.", starter:true},
+
 ];
+
+
 
 var PHRASES = [
   {cat:"At Work",   fi:"Hyvää huomenta kaikille!", ph:"hü-vää huo-men-ta", en:"Good morning everyone!", ctx:"Use when arriving at the workplace"},
@@ -652,3 +673,5 @@ window.addEventListener('DOMContentLoaded', function() {
     document.getElementById('splash').classList.add('gone');
   }, 2000);
 });
+
+
