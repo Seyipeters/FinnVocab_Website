@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   FinnVocab — Learn Finnish
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- SPLASH -->
+  <div id="splash">
+   <div class="splash-flag">
+    🇫🇮
+   </div>
+   <div class="splash-title">
+    FinnVocab
+   </div>
+   <div class="splash-sub">
+    Your Finnish language companion
+   </div>
+   <div class="splash-bar">
+    <div class="splash-progress">
+    </div>
+   </div>
+  </div>
+  <!-- OVERLAY -->
+  <div id="overlay" onclick="closeDrawer()">
+  </div>
+  <!-- DRAWER -->
+  <div id="drawer">
+   <div class="drawer-head">
+    <div class="drawer-head-name">
+     FinnVocab
+    </div>
+    <div class="drawer-head-sub">
+     Finnish Language Learning
+    </div>
+    <div class="drawer-stats">
+     <div class="d-stat">
+      <div class="d-stat-num" id="d-words">
+       20
+      </div>
+      <div class="d-stat-lbl">
+       Words
+      </div>
+     </div>
+     <div class="d-stat">
+      <div class="d-stat-num" id="d-streak">
+       1
+      </div>
+      <div class="d-stat-lbl">
+       Day Streak
+      </div>
+     </div>
+     <div class="d-stat">
+      <div class="d-stat-num" id="d-score">
+       0
+      </div>
+      <div class="d-stat-lbl">
+       XP
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="drawer-nav">
+    <div class="nav-section-label">
+     Learn
+    </div>
+    <button class="nav-item active" id="ni-home" onclick="go('home')">
+     <span class="nav-icon">
+      🏠
+     </span>
+     Home
+    </button>
+    <button class="nav-item" id="ni-flashcard" onclick="go('flashcard')">
+     <span class="nav-icon">
+      🃏
+     </span>
+     Flashcards
+    </button>
+    <button class="nav-item" id="ni-quiz" onclick="go('quiz')">
+     <span class="nav-icon">
+      🧪
+     </span>
+     Quiz
+    </button>
+    <button class="nav-item" id="ni-phrasebook" onclick="go('phrasebook')">
+     <span class="nav-icon">
+      💬
+     </span>
+     Phrasebook
+    </button>
+    <button class="nav-item" id="ni-grammar" onclick="go('grammar')">
+     <span class="nav-icon">
+      📖
+     </span>
+     Grammar Guide
+    </button>
+    <div class="nav-divider">
+    </div>
+    <div class="nav-section-label">
+     My Learning
+    </div>
+    <button class="nav-item" id="ni-vocab" onclick="go('vocab')">
+     <span class="nav-icon">
+      📝
+     </span>
+     My Vocabulary
+    </button>
+    <button class="nav-item" id="ni-progress" onclick="go('progress')">
+     <span class="nav-icon">
+      📊
+     </span>
+     My Progress
+    </button>
+    <div class="nav-divider">
+    </div>
+    <button class="nav-item" id="ni-settings" onclick="go('settings')">
+     <span class="nav-icon">
+      ⚙️
+     </span>
+     Settings
+    </button>
+    <button class="nav-item" id="ni-about" onclick="go('about')">
+     <span class="nav-icon">
+      ℹ️
+     </span>
+     About
+    </button>
+   </div>
+  </div>
+  <!-- TOP BAR -->
+  <div id="topbar">
+   <button aria-label="Menu" class="icon-btn hamburger" onclick="openDrawer()">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </button>
+   <div class="topbar-logo">
+    <span>
+     🇫🇮
+    </span>
+    FinnVocab
+   </div>
+   <div class="topbar-right">
+    <div class="streak-badge">
+     🔥
+     <span id="streak-num">
+      1
+     </span>
+    </div>
+    <button aria-label="Toggle theme" class="icon-btn" id="theme-btn" onclick="toggleTheme()">
+     🌙
+    </button>
+   </div>
+  </div>
+  <div id="main">
+   <!-- ══ HOME ══════════════════════════════════════════════ -->
+   <div class="screen active" id="home">
+    <div class="hero-banner">
+     <div class="hero-greeting">
+      Welcome back 👋
+     </div>
+     <div class="hero-title">
+      Keep learning Finnish!
+     </div>
+     <div class="hero-progress">
+      <div class="hero-progress-fill" id="hero-fill" style="width:10%">
+      </div>
+     </div>
+     <div class="hero-progress-label" id="hero-label">
+      2 of 20 words mastered
+     </div>
+    </div>
+    <div class="stats-grid">
+     <div class="stat-card">
+      <div class="num" id="s-words">
+       20
+      </div>
+      <div class="lbl">
+       Words
+      </div>
+     </div>
+     <div class="stat-card">
+      <div class="num" id="s-streak">
+       1
+      </div>
+      <div class="lbl">
+       Day Streak
+      </div>
+     </div>
+     <div class="stat-card">
+      <div class="num" id="s-xp">
+       0
+      </div>
+      <div class="lbl">
+       XP Earned
+      </div>
+     </div>
+    </div>
+    <div class="quick-actions">
+     <button class="qa-btn" onclick="go('flashcard')">
+      <span class="qa-icon">
+       🃏
+      </span>
+      <span class="qa-label">
+       Flashcards
+      </span>
+      <span class="qa-sub">
+       Study vocabulary
+      </span>
+     </button>
+     <button class="qa-btn" onclick="go('quiz')">
+      <span class="qa-icon">
+       🧪
+      </span>
+      <span class="qa-label">
+       Quiz
+      </span>
+      <span class="qa-sub">
+       Test yourself
+      </span>
+     </button>
+     <button class="qa-btn" onclick="go('phrasebook')">
+      <span class="qa-icon">
+       💬
+      </span>
+      <span class="qa-label">
+       Phrasebook
+      </span>
+      <span class="qa-sub">
+       Useful phrases
+      </span>
+     </button>
+     <button class="qa-btn" onclick="go('grammar')">
+      <span class="qa-icon">
+       📖
+      </span>
+      <span class="qa-label">
+       Grammar
+      </span>
+      <span class="qa-sub">
+       Learn the rules
+      </span>
+     </button>
+    </div>
+    <div class="section-header">
+     <span class="section-label">
+      Recent Words
+     </span>
+     <button class="see-all" onclick="go('vocab')">
+      See all →
+     </button>
+    </div>
+    <div id="home-recent">
+    </div>
+   </div>
+   <!-- ══ FLASHCARD ═════════════════════════════════════════ -->
+   <div class="screen" id="flashcard">
+    <div class="screen-title">
+     Flashcards
+    </div>
+    <div class="screen-sub">
+     Tap the card to reveal the translation
+    </div>
+    <div class="progress-dots" id="fc-dots">
+    </div>
+    <div class="fc-wrap" onclick="flipCard()">
+     <div class="fc-inner" id="fc-inner">
+      <div class="fc-face fc-front">
+       <div class="fc-tag">
+        Finnish
+       </div>
+       <div class="fc-category" id="fc-cat-f">
+        Greeting
+       </div>
+       <div class="fc-word" id="fc-fi">
+        Hei
+       </div>
+       <div class="fc-phonetic" id="fc-ph">
+        hey
+       </div>
+       <div class="fc-hint">
+        Tap to see translation
+       </div>
+      </div>
+      <div class="fc-face fc-back">
+       <div class="fc-tag">
+        English
+       </div>
+       <div class="fc-category" id="fc-cat-b">
+        Greeting
+       </div>
+       <div class="fc-translation" id="fc-en">
+        Hello
+       </div>
+       <div class="fc-example" id="fc-ex">
+        Hei! Miten menee?
+        <br/>
+        <em>
+         Hello! How are you?
+        </em>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="fc-tap-hint" id="fc-tap-hint">
+     Tap card to flip • Swipe to navigate
+    </div>
+    <div class="fc-controls">
+     <button class="fc-btn" onclick="prevCard()">
+      ◀
+     </button>
+     <span class="fc-counter" id="fc-count">
+      1 / 20
+     </span>
+     <button class="fc-btn" onclick="nextCard()">
+      ▶
+     </button>
+    </div>
+    <div class="fc-actions">
+     <button class="fc-action-btn" onclick="markCard('hard')">
+      😓 Hard
+     </button>
+     <button class="fc-action-btn" onclick="markCard('ok')">
+      🙂 OK
+     </button>
+     <button class="fc-action-btn fc-action-btn-good" onclick="markCard('easy')">
+      ✅ Easy
+     </button>
+    </div>
+   </div>
+   <!-- ══ QUIZ ══════════════════════════════════════════════ -->
+   <div class="screen" id="quiz">
+    <div class="screen-title">
+     Quiz
+    </div>
+    <div class="screen-sub">
+     Test your Finnish knowledge
+    </div>
+    <div class="quiz-mode-selector">
+     <button class="quiz-mode-btn active" onclick="setMode('fi-en',this)">
+      Finnish → English
+     </button>
+     <button class="quiz-mode-btn" onclick="setMode('en-fi',this)">
+      English → Finnish
+     </button>
+    </div>
+    <div class="quiz-topbar">
+     <div class="quiz-lives" id="q-lives">
+      ❤️❤️❤️
+     </div>
+     <div class="quiz-progress-wrap">
+      <div class="quiz-prog-track">
+       <div class="quiz-prog-fill" id="q-prog" style="width:0%">
+       </div>
+      </div>
+      <div class="quiz-prog-label" id="q-prog-label">
+       Question 1 of 10
+      </div>
+     </div>
+     <div id="q-score-live" style="font-size:13px;font-weight:600;color:var(--accent)">
+      0 pts
+     </div>
+    </div>
+    <div id="quiz-body">
+    </div>
+   </div>
+   <!-- ══ PHRASEBOOK ════════════════════════════════════════ -->
+   <div class="screen" id="phrasebook">
+    <div class="screen-title">
+     Phrasebook
+    </div>
+    <div class="screen-sub">
+     Essential Finnish phrases for daily life in Finland
+    </div>
+    <div class="phrase-cats" id="phrase-cats">
+    </div>
+    <div id="phrase-list">
+    </div>
+   </div>
+   <!-- ══ GRAMMAR ══════════════════════════════════════════ -->
+   <div class="screen" id="grammar">
+    <div class="screen-title">
+     Grammar Guide
+    </div>
+    <div class="screen-sub">
+     Key Finnish grammar topics explained simply
+    </div>
+    <div id="grammar-list">
+    </div>
+   </div>
+   <!-- ══ VOCABULARY ═══════════════════════════════════════ -->
+   <div class="screen" id="vocab">
+    <div class="screen-title">
+     My Vocabulary
+    </div>
+    <div class="screen-sub">
+     Build your personal Finnish dictionary
+    </div>
+    <div class="add-word-panel" id="add-panel">
+     <h3>
+      ➕ Add New Word
+     </h3>
+     <div class="form-grid">
+      <div class="field">
+       <label>
+        Finnish Word *
+       </label>
+       <input autocomplete="off" id="iF" placeholder="e.g. kiitos"/>
+      </div>
+      <div class="field">
+       <label>
+        English Meaning *
+       </label>
+       <input autocomplete="off" id="iE" placeholder="e.g. thank you"/>
+      </div>
+      <div class="field">
+       <label>
+        Pronunciation
+       </label>
+       <input id="iP" placeholder="e.g. kee-toss"/>
+      </div>
+      <div class="field">
+       <label>
+        Category
+       </label>
+       <select id="iC">
+        <option value="custom">
+         Custom
+        </option>
+        <option value="greeting">
+         Greeting
+        </option>
+        <option value="daily">
+         Daily Life
+        </option>
+        <option value="work">
+         Work
+        </option>
+        <option value="emergency">
+         Emergency
+        </option>
+       </select>
+      </div>
+      <div class="field" style="grid-column:1/-1">
+       <label>
+        Example Sentence
+       </label>
+       <textarea id="iX" placeholder="e.g. Kiitos paljon! = Thank you very much!"></textarea>
+      </div>
+     </div>
+     <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn-primary" onclick="addWord()">
+       Add Word
+      </button>
+      <button class="btn-outline" onclick="togglePanel()">
+       Cancel
+      </button>
+     </div>
+    </div>
+    <div class="vocab-toolbar">
+     <div class="search-box">
+      🔍
+      <input id="si" oninput="renderVocab()" placeholder="Search words..."/>
+     </div>
+     <button class="filter-btn active" onclick="setFilter('all',this)">
+      All
+     </button>
+     <button class="filter-btn" onclick="setFilter('starter',this)">
+      Starter
+     </button>
+     <button class="filter-btn" onclick="setFilter('custom',this)">
+      Mine
+     </button>
+     <button class="filter-btn" onclick="setFilter('fav',this)">
+      ⭐ Fav
+     </button>
+    </div>
+    <div class="vocab-count-bar">
+     <span class="vocab-count-text" id="vc-count">
+     </span>
+     <button class="vocab-sort" onclick="toggleSort()">
+      ⇅ Sort
+     </button>
+    </div>
+    <div id="vocab-list">
+    </div>
+   </div>
+   <!-- ══ PROGRESS ═════════════════════════════════════════ -->
+   <div class="screen" id="progress">
+    <div class="screen-title">
+     My Progress
+    </div>
+    <div class="screen-sub">
+     Track your Finnish learning journey
+    </div>
+    <div class="level-card">
+     <div class="level-label">
+      Current Level
+     </div>
+     <div class="level-name" id="lvl-name">
+      Beginner
+     </div>
+     <div class="level-bar">
+      <div class="level-fill" id="lvl-fill" style="width:5%">
+      </div>
+     </div>
+     <div class="level-xp" id="lvl-xp">
+      0 / 100 XP to next level
+     </div>
+    </div>
+    <div class="section-header">
+     <span class="section-label">
+      Achievements
+     </span>
+    </div>
+    <div class="achievement-grid" id="ach-grid">
+    </div>
+    <div class="section-header" style="margin-top:20px">
+     <span class="section-label">
+      Recent Activity
+     </span>
+    </div>
+    <div id="activity-list">
+    </div>
+   </div>
+   <!-- ══ SETTINGS ═════════════════════════════════════════ -->
+   <div class="screen" id="settings">
+    <div class="screen-title">
+     Settings
+    </div>
+    <div class="screen-sub">
+     Customise your learning experience
+    </div>
+    <div class="settings-group">
+     <div class="settings-group-title">
+      Appearance
+     </div>
+     <div class="setting-row">
+      <div>
+       <div class="setting-label">
+        Dark Mode
+       </div>
+       <div class="setting-sub">
+        Easier on the eyes at night
+       </div>
+      </div>
+      <button class="toggle off" id="dark-toggle" onclick="toggleTheme()">
+      </button>
+     </div>
+    </div>
+    <div class="settings-group">
+     <div class="settings-group-title">
+      Learning
+     </div>
+     <div class="setting-row">
+      <div>
+       <div class="setting-label">
+        Show Pronunciation
+       </div>
+       <div class="setting-sub">
+        Display phonetic guides on flashcards
+       </div>
+      </div>
+      <button class="toggle on" id="phon-toggle" onclick="toggleSetting('showPhonetic',this)">
+      </button>
+     </div>
+     <div class="setting-row">
+      <div>
+       <div class="setting-label">
+        Auto-advance Cards
+       </div>
+       <div class="setting-sub">
+        Flip to next card automatically after marking
+       </div>
+      </div>
+      <button class="toggle off" id="auto-toggle" onclick="toggleSetting('autoAdvance',this)">
+      </button>
+     </div>
+     <div class="setting-row">
+      <div>
+       <div class="setting-label">
+        Show Examples
+       </div>
+       <div class="setting-sub">
+        Display example sentences on flashcard backs
+       </div>
+      </div>
+      <button class="toggle on" id="ex-toggle" onclick="toggleSetting('showExample',this)">
+      </button>
+     </div>
+    </div>
+    <div class="settings-group">
+     <div class="settings-group-title">
+      Data
+     </div>
+     <div class="setting-row">
+      <div>
+       <div class="setting-label">
+        Export Vocabulary
+       </div>
+       <div class="setting-sub">
+        Download your word list as a text file
+       </div>
+      </div>
+      <button class="btn-outline" onclick="exportVocab()" style="padding:8px 16px;font-size:13px">
+       Export
+      </button>
+     </div>
+     <div class="setting-row">
+      <div>
+       <div class="setting-label">
+        Reset Progress
+       </div>
+       <div class="setting-sub">
+        Clear all XP and achievements
+       </div>
+      </div>
+      <button class="btn-outline" onclick="resetProgress()" style="padding:8px 16px;font-size:13px;border-color:var(--red);color:var(--red)">
+       Reset
+      </button>
+     </div>
+    </div>
+   </div>
+   <!-- ══ ABOUT ════════════════════════════════════════════ -->
+   <div class="screen" id="about">
+    <div class="screen-title">
+     About FinnVocab
+    </div>
+    <div style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);padding:28px 24px;color:#fff;margin-bottom:16px">
+     <div style="font-size:40px;margin-bottom:8px">
+      🇫🇮
+     </div>
+     <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:800;margin-bottom:4px">
+      FinnVocab
+     </div>
+     <div style="opacity:.8;font-size:13px">
+      Finnish Language Learning · Web Edition
+     </div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:10px">
+     <div style="font-weight:700;font-size:15px;margin-bottom:10px;color:var(--accent)">
+      📖 The Story
+     </div>
+     <div style="color:var(--text2);font-size:14px;line-height:1.75">
+      FinnVocab was born from learning Finnish not in a classroom, but in a kitchen — picking up words one at a time from real conversations at work. Built for anyone who has just arrived in Finland and wants a simple, personal place to collect and practise the Finnish words they encounter every day.
+     </div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:10px">
+     <div style="font-weight:700;font-size:15px;margin-bottom:10px;color:var(--accent)">
+      🛠️ Built With
+     </div>
+     <div class="chip-row">
+      <span class="chip">
+       HTML5
+      </span>
+      <span class="chip">
+       CSS3
+      </span>
+      <span class="chip">
+       Vanilla JavaScript
+      </span>
+      <span class="chip">
+       DOM API
+      </span>
+      <span class="chip blue">
+       localStorage
+      </span>
+      <span class="chip gold">
+       No Frameworks
+      </span>
+     </div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px">
+     <div style="font-weight:700;font-size:15px;margin-bottom:10px;color:var(--accent)">
+      👨‍💻 Developer
+     </div>
+     <div style="color:var(--text2);font-size:14px;line-height:1.75">
+      <strong style="color:var(--text)">
+       Omole Peter Mayowa
+      </strong>
+      — International student in Finland, studying Cloud-based Data Engineering.
+      <br/>
+      <br/>
+      Special thanks to lecturer
+      <strong style="color:var(--text)">
+       Osman
+      </strong>
+      whose encouragement made this possible, and to his wife for her unwavering support.
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- end #main -->
+  <button class="fab" id="fab" onclick="scrollToAdd()">
+   ＋
+  </button>
+  <div class="toast" id="toast">
+  </div>
+  <script src="js/app.js">
+  </script>
+ </body>
+</html>
