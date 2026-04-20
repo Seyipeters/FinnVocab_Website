@@ -346,7 +346,40 @@ var state = {
   activity: [],
   favs: {},
   phraseFilter: 'At Work',
+  dataSource: 'fallback',
+  apiStatus: 'Not connected',
 };
+
+function updateDataSourceUI() {
+  var sourceEl = document.getElementById('data-source-status');
+  var statusEl = document.getElementById('api-status-msg');
+  if (sourceEl) sourceEl.textContent = state.dataSource === 'api' ? 'Express API (/api)' : 'Local fallback data';
+  if (statusEl) statusEl.textContent = state.apiStatus;
+}
+
+async function loadAppData() {
+  if (!window.DataService || typeof window.DataService.loadContent !== 'function') {
+    state.dataSource = 'fallback';
+    state.apiStatus = 'Data service unavailable. Using local data.';
+    updateDataSourceUI();
+    return;
+  }
+
+  var remote = await window.DataService.loadContent();
+  if (remote.source === 'api' && remote.words.length) {
+    STARTER = remote.words;
+    if (remote.phrases.length) PHRASES = remote.phrases;
+    if (remote.grammar.length) GRAMMAR = remote.grammar;
+    state.dataSource = 'api';
+    state.apiStatus = 'Connected';
+  } else {
+    state.dataSource = 'fallback';
+    state.apiStatus = 'API unavailable. Using local data.';
+    if (remote.error) console.warn('FinnVocab API fallback:', remote.error.message || remote.error);
+  }
+
+  updateDataSourceUI();
+}
 
 function loadState() {
   try {
@@ -832,8 +865,9 @@ function shuf(a) {
 // ═══════════════════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════════════════
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', async function() {
   loadState();
+  await loadAppData();
   applyTheme();
   renderHome();
   renderGrammar();

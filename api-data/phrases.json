@@ -1,0 +1,10 @@
+[
+  {"cat":"At Work","fi":"Hyvää huomenta kaikille!","ph":"hü-vää huo-men-ta","en":"Good morning everyone!","ctx":"Use when arriving at the workplace"},
+  {"cat":"At Work","fi":"Tarvitsen apua.","ph":"tar-vi-tsen a-pu-a","en":"I need help.","ctx":"Say this when you need assistance from a colleague"},
+  {"cat":"Shopping","fi":"Paljonko tämä maksaa?","ph":"pal-yon-ko tä-mä","en":"How much does this cost?","ctx":"Essential for any shop visit"},
+  {"cat":"Shopping","fi":"Missä on kassa?","ph":"mis-sä on kas-sa","en":"Where is the checkout?","ctx":"Finding the till"},
+  {"cat":"Transport","fi":"Milloin bussi lähtee?","ph":"mil-loin bus-si läh-tee","en":"When does the bus leave?","ctx":"At a bus stop"},
+  {"cat":"Transport","fi":"Yksi lippu, kiitos.","ph":"ük-si lip-pu","en":"One ticket, please.","ctx":"Buying a transport ticket"},
+  {"cat":"Emergency","fi":"Soittakaa ambulanssi!","ph":"soit-ta-kaa","en":"Call an ambulance!","ctx":"Medical emergency — 112 is the Finnish emergency number"},
+  {"cat":"Social","fi":"Hauska tutustua!","ph":"haus-ka tu-tus-tua","en":"Nice to meet you!","ctx":"When meeting someone for the first time"}
+]

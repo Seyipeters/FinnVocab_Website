@@ -1,0 +1,23 @@
+[
+  {
+    "icon": "🔤",
+    "bg": "#e8f5ee",
+    "title": "Vowel Harmony",
+    "sub": "The foundation of Finnish pronunciation",
+    "body": "<p>Finnish divides vowels into groups that do not usually mix in the same word: back vowels (a, o, u), front vowels (ä, ö, y), and neutral vowels (i, e).</p><div class='tip-box'><span class='tip-icon'>💡</span>Suffixes change to match vowel harmony, for example <em>talossa</em> vs <em>tytössä</em>.</div>"
+  },
+  {
+    "icon": "❌",
+    "bg": "#fdecea",
+    "title": "Negation",
+    "sub": "A special negative verb",
+    "body": "<p>Finnish uses a dedicated negative verb that conjugates by person: <em>en, et, ei, emme, ette, eivät</em>.</p><p>Example: <strong>En puhu suomea</strong> (I do not speak Finnish).</p>"
+  },
+  {
+    "icon": "❓",
+    "bg": "#f3e8f8",
+    "title": "Question Words",
+    "sub": "Core conversation starters",
+    "body": "<p>Useful question words include <em>Missä</em> (where), <em>Milloin</em> (when), <em>Mikä</em> (what), and <em>Miten</em> (how).</p>"
+  }
+]

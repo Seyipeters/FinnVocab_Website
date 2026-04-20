@@ -1,72 +1,87 @@
 # FinnVocab
 
-FinnVocab is a web-based language learning app designed to help foreigners living in Finland learn Finnish vocabulary. The app focuses on practical words and phrases used in daily life, work, shopping, and other common situations in Finland.
+FinnVocab is a Finnish vocabulary learning web app with a static frontend and a lightweight Node.js + Express API backend.
 
-## Features
+## Technical Stack
 
-- **Flashcards**: Study Finnish words with English translations, pronunciation guides, and example sentences
-- **Quiz**: Test your knowledge with multiple-choice questions
-- **Phrasebook**: Learn essential Finnish phrases for various situations
-- **Grammar Guide**: Understand key Finnish grammar concepts
-- **Vocabulary Management**: Build your personal vocabulary list
-- **Progress Tracking**: Monitor your learning progress and streaks
+- Semantic HTML5 structure
+- CSS responsive layout
+- Vanilla JavaScript (DOM manipulation + event handling)
+- JSON-based data
+- Asynchronous API calls with `fetch`
+- Basic API error handling with graceful fallback
 
-## Vocabulary Categories
+## Architecture
 
-The app includes over 200 pre-filled Finnish words across various categories:
+The project is separated into:
 
-- **Greeting**: Basic greetings and polite expressions
-- **Daily Life**: Everyday words and phrases
-- **Work**: Office and professional vocabulary
-- **Emergency**: Important words for emergencies
-- **Store**: Shopping and retail vocabulary
-- **Food**: Meals, ingredients, and dining
-- **Transport**: Transportation and travel words
-- **Health**: Medical and health-related terms
-- **Home**: Household and home vocabulary
-- **Weather**: Weather and climate words
-- **Education**: School and learning vocabulary
-- **Hobbies**: Leisure and recreational activities
-- **Travel**: Tourism and travel vocabulary
+- **UI Layer**: [index.html](index.html), [css/style.css](css/style.css)
+- **Application Logic**: [js/app.js](js/app.js)
+- **Data Handling**: [js/data-service.js](js/data-service.js)
+- **Backend API**: [server.js](server.js), [api-data/words.json](api-data/words.json), [api-data/phrases.json](api-data/phrases.json), [api-data/grammar.json](api-data/grammar.json)
 
-## How to Use
+## API Endpoints
 
-1. **Home**: View your progress and quick access to main features
-2. **Flashcards**: Tap cards to reveal translations, swipe to navigate
-3. **Quiz**: Choose between Finnish→English or English→Finnish modes
-4. **Phrasebook**: Browse phrases by category
-5. **Grammar Guide**: Learn Finnish grammar rules
-6. **My Vocabulary**: Add custom words and manage your personal dictionary
-7. **My Progress**: Track your learning statistics
+- `GET /api/health`
+- `GET /api/words`
+- `GET /api/phrases`
+- `GET /api/grammar`
 
-## Technologies Used
+## Run Locally
 
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- No external dependencies - pure vanilla JavaScript
+1. Install dependencies:
 
-## Installation
+   npm install
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/finnvocab.git
-   ```
+2. Start the server:
 
-2. Open `index.html` in your web browser
+   npm start
 
-## Contributing
+3. Open:
 
-Feel free to contribute by:
-- Adding more vocabulary words
-- Improving the user interface
-- Adding new features
-- Fixing bugs
+   http://localhost:3000
 
-## License
+## Deployment
 
-This project is open source and available under the MIT License.
+### Frontend (Mandatory)
 
-## About
+Deploy the frontend to one of:
 
-Created as a final project for an IT course, FinnVocab aims to make learning Finnish more accessible and practical for immigrants and visitors to Finland.
+- GitHub Pages (recommended)
+- Netlify
+- Vercel
+
+#### GitHub Pages (recommended)
+
+1. Push this project to GitHub.
+2. In repository settings, open **Pages**.
+3. Set source to **Deploy from a branch**.
+4. Select `main` branch and `/ (root)` folder.
+5. Save and wait for the public URL.
+
+### Backend (Recommended)
+
+Deploy [server.js](server.js) to a Node host (e.g., Render, Railway, Fly.io, or similar).
+
+#### Render quick setup
+
+1. Create a new **Web Service** from your GitHub repo.
+2. Build command: `npm install`
+3. Start command: `npm start`
+4. Deploy and copy the public backend URL.
+
+Then set the backend base URL in [js/config.js](js/config.js):
+
+`window.FINNVOCAB_API_BASE = 'https://your-backend-url.onrender.com';`
+
+Commit and redeploy frontend.
+
+## Fallback Behavior (Documented Limitation)
+
+If `/api/*` is unavailable (for example on static-only hosting), the app continues using built-in local data in [js/app.js](js/app.js).
+
+This ensures core learning features remain functional even without public backend hosting.
+
+## Note on local run
+
+If `npm` is not found on your machine, install Node.js (LTS) first, then run `npm install` and `npm start`.

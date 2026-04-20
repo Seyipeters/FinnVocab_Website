@@ -1,0 +1,22 @@
+[
+  {"fi":"Hei","en":"Hello","ph":"hey","cat":"greeting","ex":"Hei! Miten menee? / Hello! How are you?","starter":true},
+  {"fi":"Kiitos","en":"Thank you","ph":"kee-toss","cat":"greeting","ex":"Kiitos paljon! / Thank you very much!","starter":true},
+  {"fi":"Anteeksi","en":"Excuse me / Sorry","ph":"an-tek-si","cat":"greeting","ex":"Anteeksi, missä on WC? / Excuse me, where is the toilet?","starter":true},
+  {"fi":"Ole hyvä","en":"You're welcome","ph":"o-leh hü-vä","cat":"greeting","ex":"Ole hyvä! Ei se mitään. / You're welcome! No problem.","starter":true},
+  {"fi":"Kyllä","en":"Yes","ph":"kül-lä","cat":"daily","ex":"Kyllä, se on oikein. / Yes, that is correct.","starter":true},
+  {"fi":"Ei","en":"No","ph":"ay","cat":"daily","ex":"Ei, en tiedä. / No, I don't know.","starter":true},
+  {"fi":"Missä","en":"Where","ph":"mis-sä","cat":"daily","ex":"Missä on lähin kauppa? / Where is the nearest shop?","starter":true},
+  {"fi":"Paljonko maksaa","en":"How much does it cost","ph":"pal-yon-ko mak-saa","cat":"daily","ex":"Paljonko tämä maksaa? / How much does this cost?","starter":true},
+  {"fi":"Vesi","en":"Water","ph":"ve-si","cat":"daily","ex":"Saanko vettä, kiitos? / May I have water, please?","starter":true},
+  {"fi":"Ruoka","en":"Food","ph":"ruo-ka","cat":"daily","ex":"Ruoka on valmis! / The food is ready!","starter":true},
+  {"fi":"Työ","en":"Work / Job","ph":"tü-ö","cat":"work","ex":"Menen töihin nyt. / I am going to work now.","starter":true},
+  {"fi":"Ystävä","en":"Friend","ph":"üs-tä-vä","cat":"daily","ex":"Hän on hyvä ystävä. / He/She is a good friend.","starter":true},
+  {"fi":"Auta minua","en":"Help me","ph":"au-ta mi-nu-a","cat":"emergency","ex":"Voitko auttaa minua? / Can you help me?","starter":true},
+  {"fi":"En ymmärrä","en":"I don't understand","ph":"en üm-mär-rä","cat":"daily","ex":"En ymmärrä, voitko toistaa? / I don't understand, can you repeat?","starter":true},
+  {"fi":"Puhutko englantia","en":"Do you speak English","ph":"pu-hut-ko eng-lan-ti-a","cat":"daily","ex":"Puhutko englantia? Olen uusi täällä. / Do you speak English? I am new here.","starter":true},
+  {"fi":"Sairaala","en":"Hospital","ph":"sai-raa-la","cat":"emergency","ex":"Missä on lähin sairaala? / Where is the nearest hospital?","starter":true},
+  {"fi":"Kauppa","en":"Shop / Store","ph":"kaup-pa","cat":"daily","ex":"Menen kauppaan. / I am going to the shop.","starter":true},
+  {"fi":"Bussi","en":"Bus","ph":"bus-si","cat":"daily","ex":"Milloin bussi tulee? / When does the bus come?","starter":true},
+  {"fi":"Kokous","en":"Meeting","ph":"koh-kohs","cat":"work","ex":"Kokous alkaa kello kolme. / The meeting starts at three o'clock.","starter":true},
+  {"fi":"Toimisto","en":"Office","ph":"toy-mis-toh","cat":"work","ex":"Toimisto on keskustassa. / The office is in the city center.","starter":true}
+]
