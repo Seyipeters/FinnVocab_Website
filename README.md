@@ -42,7 +42,7 @@ FinnVocab follows a layered architecture with clear separation between user inte
 | - Quiz/flashcard logic, localStorage progress                                |
 |                                                                              |
 | js/data-service.js + js/config.js                                            |
-| - fetch('/api/words'), fetch('/api/phrases'), fetch('/api/grammar')         |
+| - fetch('/api/words'), fetch('/api/phrases'), fetch('/api/grammar')          |
 | - Error handling + fallback mode                                             |
 +-------------------------------------|----------------------------------------+
                                       | HTTPS (JSON via fetch)
@@ -50,8 +50,8 @@ FinnVocab follows a layered architecture with clear separation between user inte
 +---------------------------- Serverless/API Layer ----------------------------+
 | Vercel Functions (api/*.js)                                                  |
 | /api/health, /api/words, /api/phrases, /api/grammar                          |
-| - Read JSON files from api-data/                                              |
-| - Return structured JSON responses                                             |
+| - Read JSON files from api-data/                                             |
+| - Return structured JSON responses                                           |
 +-------------------------------------|----------------------------------------+
                                       v
 +------------------------------- Data Storage ---------------------------------+
